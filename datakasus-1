@@ -21,7 +21,7 @@ print("\nJumlah missing values per kolom:")
 print(df.isnull().sum())
 
 # Mengisi missing values dengan nilai rata-rata untuk kolom numerik saja
-numeric_columns = df.select_dtypes(include=[np.number]).columns  # Pilih kolom numerik
+numeric_columns = df.select_dtypes(include=[np.number]).columns
 df[numeric_columns] = df[numeric_columns].fillna(df[numeric_columns].mean())
 
 # Mengisi missing values untuk kolom non-numerik (misalnya dengan string kosong atau modus)
